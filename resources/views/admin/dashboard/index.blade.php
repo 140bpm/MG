@@ -101,9 +101,9 @@
                         <tr>
                             <td>
 								<div class="checkbox">
-	  							  	<input id="checkbox1" type="checkbox">
-	  							  	<label for="checkbox1"></label>
-  						  		</div>
+                                    <input id="checkbox" type="checkbox" checked>
+                                    <label for="checkbox"></label>
+                                </div>
                             </td>
                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">

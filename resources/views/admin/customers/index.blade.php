@@ -11,7 +11,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="header">
-            <button type="button" class="btn btn-info pull-right btn-fill" data-toggle="modal" data-target="#addModal">Add New</button>
+            @include('/admin/includes/btns/add')
             <h4 class="title">Customers</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
@@ -32,24 +32,10 @@
                 <tbody>
                   
                     
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 9bbedbe... Merge branch 'master' of https://github.com/sebaguillen/MG
-                    @foreach($customers as $customer)                     
-=======
                     @foreach($customers as $customer)
                     
                         
->>>>>>> parent of 989dfb5... Ruta nueva y cambios en vistas
-=======
-                    @foreach($customers as $customer)
-                    
-                        
->>>>>>> parent of 989dfb5... Ruta nueva y cambios en vistas
-                        @include('/admin/customers/lookModal')                    
+                        @include('/admin/includes/modals/look')                    
                         <tr>
                             <td>{{$customer->id}}</td>
                             <td>{{$customer->name}}</td>
@@ -61,8 +47,8 @@
                             <td>{{$customer->nationalityPerson->country}}</td>
                             <td>{{$customer->customerPerson->customercode}}</td>
                             <td>
-                                <button type="button" data-toggle="modal" data-target="#lookModal"><i class="pe-7s-look"></i></button>
-                                <button type="button" data-toggle="modal" data-target="#editModal"><i class="pe-7s-edit"></i></button>
+                                @include('/admin/includes/btns/look')
+                                @include('/admin/includes/btns/edit')
                                 <button><i class="pe-7s-trash"></i></button>
                             </td>
                         </tr>                       
@@ -74,8 +60,8 @@
     </div>
 </div>
 </div>
-@include('/admin/customers/addModal')
+@include('/admin/includes/modals/add')
 </div>
-@include('/admin/customers/addModal')
+@include('/admin/includes/modals/edit')
 
 @endsection

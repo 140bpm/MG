@@ -14,6 +14,9 @@
     <!-- Search Button CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/search.css')}}">
 
+    <!-- Checkbox CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/checkbox.css')}}">
+
     <!-- Bootstrap core CSS     -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
 

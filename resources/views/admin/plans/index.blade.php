@@ -11,7 +11,7 @@
 <div class="col-md-12">
 	<div class="card">
 		<div class="header">
-			<button type="button" class="btn btn-info pull-right btn-fill" data-toggle="modal" data-target="#addModal">Add New</button>
+			@include('/admin/includes/btns/add')
 		</div>
 		<div class="content">
 
@@ -47,10 +47,10 @@
 	</div>
 </div>
 </div>
-@include('/admin/plans/lookModal')  
+@include('/admin/includes/modals/look')  
 </div>
-@include('/admin/plans/addModal')
+@include('/admin/includes/modals/add')
 </div>
-@include('/admin/plans/editModal')
+@include('/admin/includes/modals/edit')
 
 @endsection

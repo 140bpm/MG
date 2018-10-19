@@ -1,4 +1,4 @@
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -6,14 +6,14 @@
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="addModalLabel">Edit Motorcycle</h4>
+            <h4 class="modal-title" id="addModalLabel">Add New @yield('namepage')</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
         		<div class="col-md-6">
                     <div class="input-group mb-3">
-                        <label>Motorcycle Name</label>
-                      <input type="text" class="form-control" placeholder="Motorcycle Name" aria-label="Motorcycle Name" aria-describedby="basic-addon1">
+                        <label>@yield('namepage') Name</label>
+                      <input type="text" class="form-control" placeholder="@yield('namepage') Name" aria-label="@yield('namepage') Name" aria-describedby="basic-addon1">
                     </div><br>
         			<div class="input-group mb-3">
                         <label>Brand</label>
@@ -21,7 +21,7 @@
                     </div><br>
         			<div class="input-group mb-3">
                         <label>Price</label>
-                      <input type="number" class="form-control" placeholder="Price" aria-describedby="basic-addon1">
+                      <input type="number" class="form-control" placeholder="Price" aria-describedby="basic-addon1" min="0">
                     </div><br>
         			<div class="input-group mb-6">
                         <label>Img</label>
@@ -46,7 +46,8 @@
         	</div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-fill">Save changes</button>
+            <button type="button" class="btn pull-left btn-fill" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary btn-fill">Add @yield('namepage')</button>
         </div>
     </div>
 </div>
