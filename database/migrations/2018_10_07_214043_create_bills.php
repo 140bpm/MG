@@ -21,9 +21,11 @@ class CreateBills extends Migration
 
             $table->unsignedInteger('months_id');
             $table->foreign('months_id')->references('id')->on('months');
+            $table->unsignedInteger('plans_id');
+            $table->foreign('plans_id')->references('id')->on('plans');
             $table->unsignedInteger('current_fees');
             $table->string('barcode');
-        
+
             $table->timestamps();
         });
     }

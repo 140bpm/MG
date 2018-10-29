@@ -20,9 +20,6 @@ class CreateCustomers extends Migration
             $table->unsignedinteger('bill_id')->nullable();
             $table->foreign('bill_id')->references('id')->on('bills');
 
-            $table->unsignedinteger('plan_id')->nullable();
-            $table->foreign('plan_id')->references('id')->on('plans');
-
             $table->unsignedinteger('seller_id')->nullable();
             $table->foreign('seller_id')->references('id')->on('employeds');
 
