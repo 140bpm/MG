@@ -17,17 +17,17 @@ Route::get('/', function () {
 
 Route::get('/admin' , 'adminController@dashboard');
 
-Route::get('admin/cars' , 'CarController@index');
+Route::get('admin/cars' , 'ProductController@Index');
 
-Route::get('admin/motorcycles' , 'MotorcycleController@index');
+Route::get('admin/motorcycles' , 'adminController@motorcycles');
 
-Route::get('admin/plans' , 'PlanController@index');
+Route::get('admin/plans' , 'adminController@plans');
 
-Route::get('admin/customers' , 'CustomerController@index');
+Route::get('admin/customers' , 'adminController@customers');
 
-Route::get('admin/employeds' , 'EmployedController@index');
+Route::get('admin/employeds' , 'adminController@employeds');
 
-Route::get('admin/bills' , 'BillController@index');
+Route::get('admin/bills' , 'adminController@bills');
 
 Route::get('admin/settings' , 'adminController@settings');
 

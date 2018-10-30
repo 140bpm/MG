@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Products;
 
-class CarController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $cars = Products::all();
-        return view('admin.cars.index');
+    public function index()
+    {
+        $products= Products::all()->where('type','Car');
+
+
+        return view ('admin.cars.index')->with(["products"=>$products]);
     }
 
     /**

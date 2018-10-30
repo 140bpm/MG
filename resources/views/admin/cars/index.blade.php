@@ -26,25 +26,35 @@
                     <th>Year</th>
                     <th>Price</th>
                     <th>Total Sells</th>
+                    <th>Description</th>
                     <th>Options</th>
                 </thead>
                 <tbody>
                     <!--  -->
-                        @include('/admin/includes/modals/look')                    
+                        @include('/admin/includes/modals/look')
+                        @foreach ($products as $car)
+
                         <tr>
-                            <td>1</td>
-                            <td>F1</td>
-                            <td>Car</td>
-                            <td>Ferrari</td>
-                            <td>Oud-Turnhout</td>
-                            <td>$36,738</td>
+                            <td>{{$car->id}}</td>
+                            <td>{{$car->productname}}</td>
+                            <td>{{$car->type}}</td>
                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{$car->productdescription}}</td>
+
                             <td>
                                 @include('/admin/includes/btns/look')
                                 @include('/admin/includes/btns/edit')
                                 <button><i class="pe-7s-trash"></i></button>
                             </td>
                         </tr>
+
+
+
+                        @endforeach
+
                     <!--  -->
                 </tbody>
             </table>
