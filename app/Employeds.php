@@ -11,4 +11,9 @@ class Employeds extends Model
         'employedcode','totalsells','user_id',
 
     ];
+
+    public function sellerPersons()
+    {
+        return $this->hasMany('App\Customers','seller_id', 'id');
+    }
 }

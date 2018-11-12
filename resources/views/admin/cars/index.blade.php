@@ -25,33 +25,40 @@
                     <th>Brand</th>
                     <th>Year</th>
                     <th>Price</th>
-                    <th>Total Sells</th>
                     <th>Description</th>
                     <th>Options</th>
                 </thead>
                 <tbody>
                     <!--  -->
-                        @include('/admin/includes/modals/look')
+
                         @foreach ($products as $car)
+
+                        @if ($car->type == 'Auto')
+
 
                         <tr>
                             <td>{{$car->id}}</td>
+                            @include('/admin/cars/modals/delete')
                             <td>{{$car->productname}}</td>
                             <td>{{$car->type}}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$car->brand}}</td>
+                            <td>{{$car->created_at}}</td>
+                            <td>{{$car->price}}</td>
                             <td>{{$car->productdescription}}</td>
-
                             <td>
-                                @include('/admin/includes/btns/look')
-                                @include('/admin/includes/btns/edit')
-                                <button><i class="pe-7s-trash"></i></button>
+                                @include('/admin/cars/btns/look',['car->id'])
+                                @include('/admin/cars/btns/edit',['car->id'])
+                                @include('/admin/cars/btns/delete',['car->id'])
                             </td>
+                            @include('/admin/cars/modals/edit')
+
                         </tr>
 
+                        @include('/admin/cars/modals/look')
 
+                        @else
+
+                        @endif
 
                         @endforeach
 
@@ -60,11 +67,16 @@
             </table>
 
         </div>
+
     </div>
+
 </div>
 </div>
-@include('/admin/includes/modals/add')
+
+@include('/admin/cars/modals/add')
+
 </div>
-@include('/admin/includes/modals/edit')
+
+
 
 @endsection

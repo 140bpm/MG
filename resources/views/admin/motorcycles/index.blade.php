@@ -1,16 +1,17 @@
 @extends('principal.layout')
 
-<?php $page='motorcycles' ?>
+<?php $page='Motorcycles' ?>
 
-@section('title', 'Motorcycles')
+@section('title', 'Cars')
 
-@section('namepage', 'Motorcycles')
+@section('namepage', 'Cars')
 
 @section('content-row1')
 
 <div class="col-md-12">
     <div class="card">
         <div class="header">
+            <!-- including "Add New Modal" on the button "Add New" -->
             @include('/admin/includes/btns/add')
             <h4 class="title">Motorcycles</h4>
             <p class="category">Here is a subtitle for this table</p>
@@ -24,36 +25,58 @@
                     <th>Brand</th>
                     <th>Year</th>
                     <th>Price</th>
-                    <th>Total Sells</th>
+                    <th>Description</th>
                     <th>Options</th>
                 </thead>
                 <tbody>
                     <!--  -->
-                        @include('/admin/includes/modals/look')                    
+
+                        @foreach ($products as $car)
+
+                        @if ($car->type == 'Moto')
+
+
                         <tr>
-                            <td>1</td>
-                            <td>Dakota Rice</td>
-                            <td></td>
-                            <td>Niger</td>
-                            <td>Oud-Turnhout</td>
-                            <td>$36,738</td>
-                            <td></td>
+                            <td>{{$car->id}}</td>
+                            @include('/admin/cars/modals/delete')
+                            <td>{{$car->productname}}</td>
+                            <td>{{$car->type}}</td>
+                            <td>{{$car->brand}}</td>
+                            <td>{{$car->created_at}}</td>
+                            <td>{{$car->price}}</td>
+                            <td>{{$car->productdescription}}</td>
                             <td>
-                                @include('/admin/includes/btns/look')
-                                @include('/admin/includes/btns/edit')
-                                <button><i class="pe-7s-trash"></i></button>
+                                @include('/admin/motorcycles/btns/look',['car->id'])
+                                @include('/admin/motorcycles/btns/edit',['car->id'])
+                                @include('/admin/motorcycles/btns/delete',['car->id'])
                             </td>
+                            @include('/admin/motorcycles/modals/edit')
+
                         </tr>
+
+                        @include('/admin/motorcycles/modals/look')
+
+                        @else
+
+                        @endif
+
+                        @endforeach
+
                     <!--  -->
                 </tbody>
             </table>
 
         </div>
+
     </div>
+
 </div>
 </div>
-@include('/admin/includes/modals/add')
+
+@include('/admin/motorcycles/modals/add')
+
 </div>
-@include('/admin/includes/modals/edit')
+
+
 
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Employeds;
 use App\Customers;
 use App\Persons;
 use App\Nationalities;
@@ -15,7 +16,8 @@ class CustomerController extends Controller
      */
     public function index(){
         $customers= Persons::all()->where('employed_id',null);
-        return view('admin.customers.index')->with(["customers"=>$customers]);
+        $sellers= Customers::all();
+        return view('admin.customers.index')->with(["customers"=>$customers,"sellers"=>$sellers]);
     }
 
     /**

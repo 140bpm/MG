@@ -16,4 +16,11 @@ class Customers extends Model
     {
         return $this->hasMany('App\Persons', 'customer_id', 'id');
     }
+
+    public function sellerPerson()
+    {
+        return $this->belongsTo('App\Employeds','seller_id','id');
+    }
+
+
 }

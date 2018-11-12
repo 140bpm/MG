@@ -1,4 +1,4 @@
-<div class="modal fade" id="lookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="lookModal{{$car->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -10,18 +10,21 @@
         </div>
         <div class="modal-body">
         	<div class="row">
+
+                <div class="col-md-3">
+                    <label>Code: </label><br>
+                    <label>Name: </label><br>
+                    <label>Precio: </label><br>
+                    <label>Description: </label><br>
+                </div>
+
         		<div class="col-md-6">
-        			<label>Code: </label><br>
-        			<label>Name: </label><br>
-        			<label>Price: </label><br>
-        			<label>Total Sells: </label><br>
+        			<label>{{$car->id}}</label><br>
+        			<label>{{$car->productname}} </label><br>
+                    <label>{{$car->price}} </label><br>
+                    <label>{{$car->productdescription}} </label><br>
         		</div>
-        		<div class="col-md-6">
-        			<label>Type: </label><br>
-        			<label>Brand: </label><br>
-        			<label>Year: </label><br>
-        			<label>Description: </label><br>
-        		</div>
+
         	</div>
         </div>
         <div class="modal-footer">

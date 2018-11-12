@@ -12,12 +12,21 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products= Products::all()->where('type','Car');
+        $products= Products::all();
 
 
-        return view ('admin.cars.index')->with(["products"=>$products]);
+        if ($request->is('admin/cars')) {
+            return view ('admin.cars.index',compact('products'))->with(["products"=>$products]);
+        }
+
+        if ($request->is('admin/motorcycles')) {
+            return view ('admin.motorcycles.index',compact('products'))->with(["products"=>$products]);
+        }
+
+
+
     }
 
     /**
@@ -38,7 +47,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'marca' => 'required',
+            'precio'=> 'required',
+            'tipo'=> 'required',
+            'descripcion' => 'required|max:100'
+        ], [
+            'nombre.required' => 'El campo nombre es obligatorio'
+        ]);
+
+
+        Products::create([
+            'productname' => $request->nombre,
+            'brand' => $request->marca,
+            'price' => $request->precio,
+            'type' => $request->tipo,
+            'productdescription' => $request->descripcion
+        ]);
+        $products= Products::all();
+
+        return redirect()->back();
     }
 
     /**
@@ -58,9 +87,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+
     }
 
     /**
@@ -70,9 +99,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
+
     {
-        //
+
+        Products::where('id',$id)->update([
+            'productname' => $request->nombre,
+            'price' => $request->price,
+            'brand' => $request->marca,
+            'type' => $request->tipo,
+            'productdescription' => $request->descripcion
+        ]);
+
+        $products= Products::all();
+
+        return redirect()->back();
+
     }
 
     /**
@@ -83,6 +125,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Products::where('id',$id)->delete();
+
+        $products= Products::all();
+
+        return redirect()->back();
     }
 }

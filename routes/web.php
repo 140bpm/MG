@@ -15,24 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin' , 'AdminController@dashboard');
+Route::get('/admin' , 'adminController@dashboard');
 
-Route::get('admin/cars' , 'ProductController@Index');
+Route::resource('admin/cars' , 'ProductController');
 
-Route::get('admin/motorcycles' , 'AdminController@motorcycles');
+Route::resource('admin/motorcycles','ProductController');
 
-Route::get('admin/plans' , 'AdminController@plans');
+Route::get('admin/plans' , 'adminController@plans');
 
-Route::get('admin/customers' , 'AdminController@customers');
+Route::resource('admin/customers' , 'CustomerController');
 
-Route::get('admin/employeds' , 'AdminController@employeds');
+Route::resource('admin/employeds' , 'EmployedController');
 
-Route::get('admin/bills' , 'AdminController@bills');
+Route::get('admin/bills' , 'adminController@bills');
 
-Route::get('admin/settings' , 'AdminController@settings');
+Route::get('admin/settings' , 'adminController@settings');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 

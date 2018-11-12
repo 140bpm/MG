@@ -21,4 +21,6 @@ class Persons extends Model
     {
         return $this->belongsTo('App\Customers','customer_id','id');
     }
+
+
 }
