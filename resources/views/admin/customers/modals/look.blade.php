@@ -1,4 +1,4 @@
-<div class="modal fade" id="lookModal{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="lookModal{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -6,7 +6,7 @@
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">@yield('namepage') Information</h4>
+            <h4 class="modal-title" id="myModalLabel">Customer Information</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
@@ -19,10 +19,10 @@
                 </div>
 
         		<div class="col-md-6">
-        			<label>{{$person->id}}</label><br>
-        			<label>{{$person->name}} </label><br>
-                    <label>{{$person->dni}} </label><br>
-                    <label>{{$person->adress}} </label><br>
+        			<label>{{$client->customerPerson->id}}</label><br>
+        			<label>{{$client->customerPerson->name}} </label><br>
+                    <label>{{$client->customerPerson->dni}} </label><br>
+                    <label>{{$client->customerPerson->adress}} </label><br>
         		</div>
 
         	</div>

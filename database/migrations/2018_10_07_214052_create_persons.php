@@ -23,16 +23,9 @@ class CreatePersons extends Migration
 
             $table->string('sex')->nullable();
             $table->string('civil_state')->nullable();
-            
 
             $table->unsignedInteger('nationality_id')->nullable();
-            $table->foreign('nationality_id')->references('id')->on('nationalities');
-
-            $table->unsignedInteger('employed_id')->nullable();
-            $table->foreign('employed_id')->references('id')->on('employeds');
-            
-            $table->unsignedInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('nationality_id')->references('id')->on('nationalities')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

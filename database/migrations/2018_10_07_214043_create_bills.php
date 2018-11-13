@@ -20,9 +20,9 @@ class CreateBills extends Migration
             $table->string('total_fees');
 
             $table->unsignedInteger('months_id');
-            $table->foreign('months_id')->references('id')->on('months');
+            $table->foreign('months_id')->references('id')->on('months')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('plans_id');
-            $table->foreign('plans_id')->references('id')->on('plans');
+            $table->foreign('plans_id')->references('id')->on('plans')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('current_fees');
             $table->string('barcode');
 

@@ -8,19 +8,18 @@ class Customers extends Model
 {
     protected $fillable = [
 
-        'customercode','bill_id','plan_id','seller_id',
+        'customercode','bill_id','plan_id','seller_id','data_customer_id'
 
     ];
 
-    public function customersPersons()
+    public function customerPerson()
     {
-        return $this->hasMany('App\Persons', 'customer_id', 'id');
+        return $this->belongsTo('App\Persons', 'data_customer_id', 'id');
     }
 
-    public function sellerPerson()
+    public function customerEmployed()
     {
         return $this->belongsTo('App\Employeds','seller_id','id');
     }
-
 
 }

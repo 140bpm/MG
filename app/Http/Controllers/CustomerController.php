@@ -18,7 +18,8 @@ class CustomerController extends Controller
         $persons= Persons::all();
         $clients= Customers::all();
         $employeds= Employeds::all();
-        return view('admin.customers.index')->with(["persons"=>$persons,"clients"=>$clients,"employeds"=>$employeds]);
+        $nationalities= Nationalities::all();
+        return view('admin.customers.index')->with(["persons"=>$persons,"clients"=>$clients,"employeds"=>$employeds,"nationalities"=>$nationalities]);
     }
 
     /**
@@ -39,7 +40,39 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Persons::create([
+
+            'name'=>$request->name,
+            'lastname'=>$request->lastname,
+            'dni'=>$request->dni,
+            'birth'=>$request->birth,
+            'adress'=>$request->adress,
+            'sex'=>$request->sex,
+            'civil_state'=>$request->civilstate,
+            'nationality_id'=>$request->nationality
+
+        ]);
+
+        $customer = Persons::all()->last();
+        $flag = 1;
+
+        Employeds::create([
+            'data_employed_id' => $flag
+        ]);
+
+        Customers::create([
+            'data_customer_id' => $customer->id,
+            'seller_id' => $flag
+        ]);
+
+        $persons= Persons::all();
+        $clients= Customers::all();
+        $employeds= Employeds::all();
+        $nationalities= Nationalities::all();
+
+        return redirect()->back();
+
+
     }
 
     /**
@@ -61,7 +94,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -73,7 +106,29 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cond = $request->code;
+        Persons::where('id',$cond)->update([
+
+            'name'=>$request->name,
+            'lastname'=>$request->lastname,
+            'dni'=>$request->dni,
+            'birth'=>$request->birth,
+            'adress'=>$request->adress,
+            'sex'=>$request->sex,
+            'civil_state'=>$request->civilstate,
+            'nationality_id'=>$request->nationality
+
+        ]);
+
+        Customers::where('data_customer_id',$cond)->update([
+
+            'seller_id' => $request->seller
+
+        ]);
+
+
+
+        return redirect()->back();
     }
 
     /**
@@ -82,8 +137,12 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $cond = $request->code;
+
+        Persons::where('id',$cond)->delete();
+
+        return redirect()->back();
     }
 }

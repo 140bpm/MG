@@ -15,13 +15,15 @@ class CreateCustomers extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('customercode')->nullable();
 
             $table->unsignedinteger('bill_id')->nullable();
-            $table->foreign('bill_id')->references('id')->on('bills');
+            $table->foreign('bill_id')->references('id')->on('bills')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('seller_id')->nullable();
-            $table->foreign('seller_id')->references('id')->on('employeds');
+            $table->foreign('seller_id')->references('id')->on('employeds')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedinteger('data_customer_id')->nullable();
+            $table->foreign('data_customer_id')->references('id')->on('persons')->onDelete('cascade')->onUpdate('cascade');
 
 
             $table->timestamps();

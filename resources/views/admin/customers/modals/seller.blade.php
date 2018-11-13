@@ -1,4 +1,4 @@
-<div class="modal fade" id="sellerModal{{$actual =$person->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="sellerModal{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -18,37 +18,18 @@
                     <label>Sex:</label><br>
                 </div>
 
-                @foreach ($persons as $person)
-                @foreach ($employeds as $employed)
-                @foreach ($clients as $client)
-                @if ($actual == $client->seller_id && $person->employed_id == $employed->id && $employed->id == $client->seller_id )
-
                 <div class="col-md-6">
-                        <label>{{$person->name}}</label><br>
+                <label>{{$client->customerEmployed->employedPerson->name}}</label><br>
                 </div>
-
                 <div class="col-md-6">
-                        <label>{{$person->lastname}}</label><br>
+                 <label>{{$client->customerEmployed->employedPerson->lastname}}</label><br>
                 </div>
-
                 <div class="col-md-6">
-                        <label>{{$person->dni}}</label><br>
+                <label>{{$client->customerEmployed->employedPerson->dni}}</label><br>
                 </div>
-
                 <div class="col-md-6">
-                        <label>{{$person->sex}}</label><br>
+                <label>{{$client->customerEmployed->employedPerson->nationalityPerson->country}}</label><br>
                 </div>
-
-
-
-                @endif
-                @endforeach
-                @endforeach
-                @endforeach
-
-
-
-
 
         	</div>
         </div>

@@ -19,12 +19,12 @@ class Persons extends Model
 
     public function employedPerson()
     {
-        return $this->belongsTo('App\Employeds','employed_id','id');
+        return $this->hasMany('App\Employeds','data_employed_id','id');
     }
 
-    public function customerPerson()
+    public function customersPersons()
     {
-        return $this->belongsTo('App\Customers','customer_id','id');
+        return $this->hasMany('App\Customers', 'data_customer_id', 'id');
     }
 
 

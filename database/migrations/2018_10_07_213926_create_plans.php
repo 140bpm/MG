@@ -21,7 +21,7 @@ class CreatePlans extends Migration
             $table->string('description')->nullable();
 
             $table->unsignedInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
