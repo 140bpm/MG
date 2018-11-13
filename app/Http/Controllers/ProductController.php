@@ -52,6 +52,7 @@ class ProductController extends Controller
             'marca' => 'required',
             'precio'=> 'required',
             'tipo'=> 'required',
+            'modelo' => 'required',
             'descripcion' => 'required|max:100'
         ], [
             'nombre.required' => 'El campo nombre es obligatorio'
@@ -63,6 +64,7 @@ class ProductController extends Controller
             'brand' => $request->marca,
             'price' => $request->precio,
             'type' => $request->tipo,
+            'model' => $request->modelo,
             'productdescription' => $request->descripcion
         ]);
         $products= Products::all();
@@ -108,6 +110,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'brand' => $request->marca,
             'type' => $request->tipo,
+            'model' => $request->modelo,
             'productdescription' => $request->descripcion
         ]);
 

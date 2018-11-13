@@ -17,6 +17,7 @@ class CreateProducts extends Migration
             $table->increments('id');
             $table->string('productname');
             $table->string('type')->nullable();
+            $table->integer('model');
             $table->string('productdescription')->nullable();
             $table->float('price');
             $table->string('brand');

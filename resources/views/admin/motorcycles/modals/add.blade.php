@@ -10,12 +10,12 @@
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="addModalLabel">Add New Motorcycles</h4>
+            <h4 class="modal-title" id="addModalLabel">Add New Motorcycle</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
         		<div class="col-md-6">
-                        <form action="{{ url('admin/cars') }}" method="POST">
+                        <form action="{{ url('admin/motorcycles') }}" method="POST">
                             {{ csrf_field() }}
                     <div class="input-group mb-3">
                         <label for="nombre">@yield('namepage') Name</label>
@@ -30,7 +30,7 @@
                     </div><br>
                     <div class="input-group mb-3">
                         <label>Model</label>
-                      <input type="text" class="form-control" placeholder="Brand" aria-describedby="basic-addon1" name="marca" required>
+                      <input type="text" class="form-control" placeholder="Model" aria-describedby="basic-addon1" name="modelo" required>
                     </div><br>
         			<div class="input-group mb-3">
                         <label>Price</label>
@@ -49,7 +49,7 @@
 
         			<div class="input-group mb-3">
                         <label>Description</label>
-                      <textarea type="text" class="form-control" placeholder="Description"  aria-describedby="basic-addon1" name="descripcion" required></textarea>
+                      <textarea type="text" class="form-control" placeholder="Description"  aria-describedby="basic-addon1" name="descripcion"></textarea>
                     </div><br>
         		</div>
         	</div>
@@ -57,7 +57,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn pull-left btn-fill" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-fill">Add</button>
+            <button type="submit" class="btn btn-primary btn-fill">Add Motorcycle</button>
         </div>
     </form>
     </div>

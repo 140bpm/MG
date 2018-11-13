@@ -12,7 +12,7 @@
     <div class="card">
         <div class="header">
             <!-- including "Add New Modal" on the button "Add New" -->
-            @include('/admin/includes/btns/add')
+            @include('/admin/cars/btns/add')
             <h4 class="title">Cars</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
@@ -22,6 +22,7 @@
                     <th>Code</th>
                     <th>Brand</th>
                     <th>Name</th>
+                    <th>Model</th>
                     <th>Type</th>
                     <th>Year</th>
                     <th>Price</th>
@@ -41,6 +42,7 @@
                             @include('/admin/cars/modals/delete')
                             <td>{{$car->brand}}</td>
                             <td>{{$car->productname}}</td>
+                            <td>{{$car->model}}</td>
                             <td>{{$car->type}}</td>
                             <td>{{$car->created_at}}</td>
                             <td>{{$car->price}}</td>

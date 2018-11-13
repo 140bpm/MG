@@ -2,9 +2,9 @@
 
 <?php $page='Motorcycles' ?>
 
-@section('title', 'Cars')
+@section('title', 'Motorcycles')
 
-@section('namepage', 'Cars')
+@section('namepage', 'Motorcycle')
 
 @section('content-row1')
 
@@ -23,6 +23,7 @@
                     <th>Name</th>
                     <th>Type</th>
                     <th>Brand</th>
+                    <th>Model</th>
                     <th>Year</th>
                     <th>Price</th>
                     <th>Description</th>
@@ -31,24 +32,25 @@
                 <tbody>
                     <!--  -->
 
-                        @foreach ($products as $car)
+                        @foreach ($products as $motorcycle)
 
-                        @if ($car->type == 'Moto')
+                        @if ($motorcycle->type == 'Moto')
 
 
                         <tr>
-                            <td>{{$car->id}}</td>
-                            @include('/admin/cars/modals/delete')
-                            <td>{{$car->productname}}</td>
-                            <td>{{$car->type}}</td>
-                            <td>{{$car->brand}}</td>
-                            <td>{{$car->created_at}}</td>
-                            <td>{{$car->price}}</td>
-                            <td>{{$car->productdescription}}</td>
+                            <td>{{$motorcycle->id}}</td>
+                            @include('/admin/motorcycles/modals/delete')
+                            <td>{{$motorcycle->productname}}</td>
+                            <td>{{$motorcycle->type}}</td>
+                            <td>{{$motorcycle->brand}}</td>
+                            <td>{{$motorcycle->model}}</td>
+                            <td>{{$motorcycle->created_at}}</td>
+                            <td>{{$motorcycle->price}}</td>
+                            <td>{{$motorcycle->productdescription}}</td>
                             <td>
-                                @include('/admin/motorcycles/btns/look',['car->id'])
-                                @include('/admin/motorcycles/btns/edit',['car->id'])
-                                @include('/admin/motorcycles/btns/delete',['car->id'])
+                                @include('/admin/motorcycles/btns/look',['motorcycle->id'])
+                                @include('/admin/motorcycles/btns/edit',['motorcycle->id'])
+                                @include('/admin/motorcycles/btns/delete',['motorcycle->id'])
                             </td>
                             @include('/admin/motorcycles/modals/edit')
 

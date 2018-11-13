@@ -12,18 +12,32 @@
         	<div class="row">
 
                 <div class="col-md-3">
-                    <label>Code: </label><br>
-                    <label>Name: </label><br>
-                    <label>Precio: </label><br>
-                    <label>Description: </label><br>
+                    <label><b>Code:</b> </label><br>
+                    <label><b>Brand:</b> </label><br>
+                    <label><b>Precio:</b> </label><br>
+                    <label><b>Description:</b> </label><br>
                 </div>
 
-        		<div class="col-md-6">
+        		<div class="col-md-3">
         			<label>{{$car->id}}</label><br>
-        			<label>{{$car->productname}} </label><br>
+        			<label>{{$car->brand}} </label><br>
                     <label>{{$car->price}} </label><br>
                     <label>{{$car->productdescription}} </label><br>
         		</div>
+
+                <div class="col-md-3">
+                    <label><b>Name:</b> </label><br>
+                    <label><b>Model:</b> </label><br>
+                    <label><b>Type:</b> </label><br>
+                    <label><b>Year:</b> </label><br>
+                </div>
+
+                <div class="col-md-3">
+                    <label>{{$car->productname}}</label><br>
+                    <label>{{$car->model}}</label><br>
+                    <label>{{$car->type}}</label><br>
+                    <label>{{$car->created_at}}</label><br>
+                </div>
 
         	</div>
         </div>

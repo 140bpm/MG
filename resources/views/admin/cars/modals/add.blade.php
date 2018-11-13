@@ -39,6 +39,11 @@
                     </select>
                     </div><br>
 
+                    <div class="input-group mb-3">
+                        <label>Model</label>
+                      <input type="number" class="form-control" placeholder="Model" aria-describedby="basic-addon1" min="0" name="modelo" required>
+                    </div><br>
+
         			<div class="input-group mb-3">
                         <label>Description</label>
                       <textarea type="text" class="form-control" placeholder="Description"  aria-describedby="basic-addon1" name="descripcion" required></textarea>
