@@ -19,37 +19,46 @@
                             {{ csrf_field() }}
                     <div class="input-group mb-3">
                         <label for="nombre">Name</label>
-                      <input type="text" class="form-control" placeholder="Nombre" aria-label="" aria-describedby="basic-addon1" name="nombre" id="nombre" required>
+                      <input type="text" class="form-control" placeholder="Name" aria-label="" aria-describedby="basic-addon1" name="name" id="nombre" required>
                       @if ($errors->has('nombre'))
                         <p>{{ $errors->first('nombre') }}</p>
                       @endif
                     </div><br>
         			<div class="input-group mb-3">
-                        <label>Brand</label>
-                      <input type="text" class="form-control" placeholder="Brand" aria-describedby="basic-addon1" name="marca" required>
+                        <label>Lastname</label>
+                      <input type="text" class="form-control" placeholder="Lastname" aria-describedby="basic-addon1" name="lastname" required>
                     </div><br>
                     <div class="input-group mb-3">
-                        <label>Model</label>
-                      <input type="text" class="form-control" placeholder="Brand" aria-describedby="basic-addon1" name="marca" required>
+                        <label>DNI</label>
+                      <input type="text" class="form-control" placeholder="DNI" aria-describedby="basic-addon1" name="DNI" required>
                     </div><br>
         			<div class="input-group mb-3">
-                        <label>Price</label>
-                      <input type="number" class="form-control" placeholder="Price" aria-describedby="basic-addon1" min="0" name="precio" required>
+                        <label>Birth</label>
+                      <input type="date" class="form-control" placeholder="Birth" aria-describedby="basic-addon1" min="0" name="birth" required>
                     </div><br>
         		</div>
 
         		<div class="col-md-6">
-        			<div class="input-group mb-3">
-                        <label>Type</label>
+                    <div class="input-group mb-3">
+                        <label>Adress</label>
+                      <input type="date" class="form-control" placeholder="Adress" aria-describedby="basic-addon1" min="0" name="Adress" required>
+                    </div><br>
 
-                    <select type="text" class="form-control" placeholder="Type" aria-describedby="basic-addon1" name="tipo" required>
-                        <option value="Moto">Moto</option>
+        			<div class="input-group mb-3">
+                        <label>Sex</label>
+
+                    <select type="text" class="form-control" placeholder="Sex" aria-describedby="basic-addon1" name="sex" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                     </div><br>
 
         			<div class="input-group mb-3">
-                        <label>Description</label>
-                      <textarea type="text" class="form-control" placeholder="Description"  aria-describedby="basic-addon1" name="descripcion" required></textarea>
+                        <label>Nationality</label>
+
+                    <select type="text" class="form-control" placeholder="Nationality" aria-describedby="basic-addon1" name="nationality" required>
+                        <option value="Argentina">Argentina</option>
+                    </select>
                     </div><br>
         		</div>
         	</div>

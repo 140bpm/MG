@@ -4,7 +4,7 @@
 
 @section('title', 'Cars')
 
-@section('namepage', 'Cars')
+@section('namepage', 'Car')
 
 @section('content-row1')
 
@@ -20,9 +20,9 @@
             <table class="table table-hover table-striped">
                 <thead>
                     <th>Code</th>
+                    <th>Brand</th>
                     <th>Name</th>
                     <th>Type</th>
-                    <th>Brand</th>
                     <th>Year</th>
                     <th>Price</th>
                     <th>Description</th>
@@ -39,9 +39,9 @@
                         <tr>
                             <td>{{$car->id}}</td>
                             @include('/admin/cars/modals/delete')
+                            <td>{{$car->brand}}</td>
                             <td>{{$car->productname}}</td>
                             <td>{{$car->type}}</td>
-                            <td>{{$car->brand}}</td>
                             <td>{{$car->created_at}}</td>
                             <td>{{$car->price}}</td>
                             <td>{{$car->productdescription}}</td>

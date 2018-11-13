@@ -4,7 +4,7 @@
 
 @section('title', 'Cars')
 
-@section('namepage', 'Cars')
+@section('namepage', 'Car')
 
 @section('content-row1')
 
@@ -26,7 +26,6 @@
                     <th>Birth</th>
                     <th>Adress</th>
                     <th>Sex</th>
-                    <th>Civil State</th>
                     <th>Nationality</th>
                     <th>Customer Code</th>
                     <th>Options</th>
@@ -46,7 +45,6 @@
                             @include('/admin/customers/modals/seller')
                             <td>{{$person->adress}}</td>
                             <td>{{$person->sex}}</td>
-                            <td>{{$person->civil_state}}</td>
                             <th>{{$person->nationalityPerson->country}}</th>
                             <th>{{$person->customerPerson->customercode}}</th>
 
