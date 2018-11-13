@@ -15,9 +15,10 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $customers= Persons::all()->where('employed_id',null);
-        $sellers= Customers::all();
-        return view('admin.customers.index')->with(["customers"=>$customers,"sellers"=>$sellers]);
+        $persons= Persons::all();
+        $clients= Customers::all();
+        $employeds= Employeds::all();
+        return view('admin.customers.index')->with(["persons"=>$persons,"clients"=>$clients,"employeds"=>$employeds]);
     }
 
     /**

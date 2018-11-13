@@ -1,4 +1,4 @@
-<div class="modal fade" id="lookModal{{$customer->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="lookModal{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -19,10 +19,10 @@
                 </div>
 
         		<div class="col-md-6">
-        			<label>{{$customer->id}}</label><br>
-        			<label>{{$customer->name}} </label><br>
-                    <label>{{$customer->dni}} </label><br>
-                    <label>{{$customer->adress}} </label><br>
+        			<label>{{$person->id}}</label><br>
+        			<label>{{$person->name}} </label><br>
+                    <label>{{$person->dni}} </label><br>
+                    <label>{{$person->adress}} </label><br>
         		</div>
 
         	</div>

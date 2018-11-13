@@ -16,4 +16,9 @@ class Employeds extends Model
     {
         return $this->hasMany('App\Customers','seller_id', 'id');
     }
+
+    public function employedsPersons()
+    {
+        return $this->hasMany('App\Persons','employed_id','id');
+    }
 }

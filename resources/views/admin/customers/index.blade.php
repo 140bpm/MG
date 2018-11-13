@@ -34,35 +34,35 @@
                 <tbody>
                     <!--  -->
 
-                        @foreach ($customers as $customer)
-
+                        @foreach ($persons as $person)
+                        @if ($person->customer_id > 0)
                         <tr>
-                            <td>{{$customer->id}}</td>
+                            <td>{{$person->id}}</td>
                             @include('/admin/customers/modals/delete')
-                            <td>{{$customer->name}}</td>
-                            <td>{{$customer->lastname}}</td>
-                            <td>{{$customer->dni}}</td>
-                            <td>{{$customer->birth}}</td>
+                            <td>{{$person->name}}</td>
+                            <td>{{$person->lastname}}</td>
+                            <td>{{$person->dni}}</td>
+                            <td>{{$person->birth}}</td>
                             @include('/admin/customers/modals/seller')
-                            <td>{{$customer->adress}}</td>
-                            <td>{{$customer->sex}}</td>
-                            <td>{{$customer->civil_state}}</td>
-                            <th>{{$customer->nationalityPerson->country}}</th>
-                            <th>{{$customer->customerPerson->customercode}}</th>
+                            <td>{{$person->adress}}</td>
+                            <td>{{$person->sex}}</td>
+                            <td>{{$person->civil_state}}</td>
+                            <th>{{$person->nationalityPerson->country}}</th>
+                            <th>{{$person->customerPerson->customercode}}</th>
 
 
                             <td>
-                                @include('/admin/customers/btns/seller',['customer->id'])
-                                @include('/admin/customers/btns/look',['customer->id'])
-                                @include('/admin/customers/btns/edit',['customer->id'])
-                                @include('/admin/customers/btns/delete',['customer->id'])
+                                @include('/admin/customers/btns/seller',['person->id,person->name,persons,employeds,clients'])
+                                @include('/admin/customers/btns/look',['person->id'])
+                                @include('/admin/customers/btns/edit',['person->id'])
+                                @include('/admin/customers/btns/delete',['person->id'])
                             </td>
                             @include('/admin/customers/modals/edit')
 
                         </tr>
 
                         @include('/admin/customers/modals/look')
-
+                        @endif
                         @endforeach
 
 

@@ -17,6 +17,11 @@ class Persons extends Model
         return $this->belongsTo('App\Nationalities','nationality_id', 'id');
     }
 
+    public function employedPerson()
+    {
+        return $this->belongsTo('App\Employeds','employed_id','id');
+    }
+
     public function customerPerson()
     {
         return $this->belongsTo('App\Customers','customer_id','id');

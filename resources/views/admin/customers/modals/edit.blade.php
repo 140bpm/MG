@@ -1,4 +1,4 @@
-<div class="modal fade" id="editModal{{$customer->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="editModal{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -11,7 +11,7 @@
         <div class="modal-body">
         		<div class="row">
                         <div class="col-md-6">
-                                <form action="/admin/customer/{{$customer->id}}" method="post">
+                                <form action="/admin/customer/{{$person->id}}" method="post">
                                     {{method_field('PATCH')}}
                                     {{ csrf_field() }}
                             <div class="input-group mb-3">
