@@ -28,7 +28,7 @@
                 <label>{{$client->customerEmployed->employedPerson->dni}}</label><br>
                 </div>
                 <div class="col-md-6">
-                <label>{{$client->customerEmployed->employedPerson->nationalityPerson->country}}</label><br>
+                <label></label><br>
                 </div>
 
         	</div>

@@ -52,9 +52,8 @@ class CustomerController extends Controller
             'nationality_id'=>$request->nationality
 
         ]);
-
-        $customer = Persons::all()->last();
-        $flag = 1;
+        $flag= 1;
+        $customer= Customers::all()->last();
 
         Employeds::create([
             'data_employed_id' => $flag
@@ -62,11 +61,11 @@ class CustomerController extends Controller
 
         Customers::create([
             'data_customer_id' => $customer->id,
-            'seller_id' => $flag
+            'seller_id' => $request->seller
         ]);
 
         $persons= Persons::all();
-        $clients= Customers::all();
+
         $employeds= Employeds::all();
         $nationalities= Nationalities::all();
 

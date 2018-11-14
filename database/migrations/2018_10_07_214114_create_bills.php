@@ -25,6 +25,8 @@ class CreateBills extends Migration
             $table->foreign('plans_id')->references('id')->on('plans')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('current_fees');
             $table->string('barcode');
+            $table->unsignedInteger('customers_id');
+            $table->foreign('customers_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

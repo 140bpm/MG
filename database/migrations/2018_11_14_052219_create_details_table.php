@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeds extends Migration
+class CreateDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateEmployeds extends Migration
      */
     public function up()
     {
-        Schema::create('employeds', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('employedcode')->nullable();
-            $table->integer('totalsells')->nullable();
-            $table->unsignedInteger('data_employed_id')->nullable();
-            $table->foreign('data_employed_id')->references('id')->on('persons')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedInteger('bills_id');
+            $table->foreign('bills_id')->references('id')->on('bills')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('sell_price');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateEmployeds extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('details');
     }
 }

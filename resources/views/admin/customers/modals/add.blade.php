@@ -69,9 +69,16 @@
                         @foreach ($nationalities as $nation)
                         <option value="{{$nation->id}}">{{$nation->country}}</option>
                         @endforeach
-
                     </select>
                     </div><br>
+
+                    <div class="input-group mb-3">
+                        <label>Seller</label>
+                    <select type="text" class="form-control" placeholder="Code" aria-describedby="basic-addon1" name="seller" required>
+                        <option value="1">NONE</option>
+                    </select>
+                    </div><br>
+
         		</div>
         	</div>
         </div>

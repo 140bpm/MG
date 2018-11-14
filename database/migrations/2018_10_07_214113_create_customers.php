@@ -16,9 +16,6 @@ class CreateCustomers extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedinteger('bill_id')->nullable();
-            $table->foreign('bill_id')->references('id')->on('bills')->onDelete('cascade')->onUpdate('cascade');
-
             $table->unsignedinteger('seller_id')->nullable();
             $table->foreign('seller_id')->references('id')->on('employeds')->onDelete('cascade')->onUpdate('cascade');
 
