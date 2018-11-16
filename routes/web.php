@@ -21,13 +21,13 @@ Route::resource('admin/cars' , 'ProductController');
 
 Route::resource('admin/motorcycles','ProductController');
 
-Route::get('admin/plans' , 'adminController@plans');
+Route::resource('admin/plans' , 'PlanController');
 
 Route::resource('admin/customers' , 'CustomerController');
 
 Route::resource('admin/employeds' , 'EmployedController');
 
-Route::get('admin/bills' , 'adminController@bills');
+Route::resource('admin/bills' , 'BillController');
 
 Route::get('admin/settings' , 'adminController@settings');
 

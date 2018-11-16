@@ -89,7 +89,7 @@
                 <li class=" <?php if($page=='employeds'){echo 'active';} ?> ">
                     <a href="/admin/employeds">
                         <i class="pe-7s-id"></i>
-                        <p>Employeds</p>
+                        <p>Employees</p>
                     </a>
                 </li>
                 <li class=" <?php if($page=='bills'){echo 'active';} ?> ">

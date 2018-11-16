@@ -12,20 +12,34 @@
         	<div class="row">
 
                 <div class="col-md-3">
-                    <label>Code: </label><br>
-                    <label>Name: </label><br>
-                    <label>DNI: </label><br>
-                    <label>Description: </label><br>
+                    <label><b>Code: </b></label><br>
+                    <label><b>Name: </b></label><br>
+                    <label><b>DNI: </b></label><br>
+                    <label><b>Adress: </b></label><br>
                 </div>
 
-        		<div class="col-md-6">
-        			<label>{{$employed->employedPerson->id}}</label><br>
-        			<label>{{$employed->employedPerson->name}} </label><br>
+                <div class="col-md-3">
+                    <label>{{$employed->employedPerson->id}}</label><br>
+                    <label>{{$employed->employedPerson->name}} </label><br>
                     <label>{{$employed->employedPerson->dni}} </label><br>
                     <label>{{$employed->employedPerson->adress}} </label><br>
-        		</div>
+                </div>
 
-        	</div>
+                <div class="col-md-3">
+                    <label><b>Birth: </b></label><br>
+                    <label><b>Lastname: </b></label><br>
+                    <label><b>Nationality: </b></label><br>
+                    <label><b>Civil State: </b></label><br>
+                </div>
+
+                <div class="col-md-3">
+                    <label>{{$employed->employedPerson->birth}}</label><br>
+                    <label>{{$employed->employedPerson->lastname}}</label><br>
+                    <label>{{$employed->employedPerson->nationality_id}}</label><br>
+                    <label>{{$employed->employedPerson->civil_state}}</label><br>
+                </div>
+
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-fill pull-left" data-dismiss="modal">Close</button>

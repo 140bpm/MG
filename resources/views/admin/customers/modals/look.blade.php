@@ -12,18 +12,32 @@
         	<div class="row">
 
                 <div class="col-md-3">
-                    <label>Code: </label><br>
-                    <label>Name: </label><br>
-                    <label>DNI: </label><br>
-                    <label>Description: </label><br>
+                    <label><b>Code: </b></label><br>
+                    <label><b>Name: </b></label><br>
+                    <label><b>DNI: </b></label><br>
+                    <label><b>Adress: </b></label><br>
                 </div>
 
-        		<div class="col-md-6">
+        		<div class="col-md-3">
         			<label>{{$client->customerPerson->id}}</label><br>
         			<label>{{$client->customerPerson->name}} </label><br>
                     <label>{{$client->customerPerson->dni}} </label><br>
                     <label>{{$client->customerPerson->adress}} </label><br>
         		</div>
+
+                <div class="col-md-3">
+                    <label><b>Birth: </b></label><br>
+                    <label><b>Lastanem: </b></label><br>
+                    <label><b>Nationality: </b></label><br>
+                    <label><b>Civil State: </b></label><br>
+                </div>
+
+                <div class="col-md-3">
+                    <label>{{$client->customerPerson->birth}}</label><br>
+                    <label>{{$client->customerPerson->lastname}}</label><br>
+                    <label>{{$client->customerPerson->nationality_id}}</label><br>
+                    <label>{{$client->customerPerson->civil_state}}</label><br>
+                </div>
 
         	</div>
         </div>

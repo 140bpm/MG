@@ -6,7 +6,7 @@
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">Information</h4>
+            <h4 class="modal-title" id="myModalLabel">Seller Information ({{$client->customerEmployed->employedPerson->lastname}})</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
@@ -19,20 +19,24 @@
                 </div>
 
                 <div class="col-md-6">
-                <label>{{$client->customerEmployed->employedPerson->name}}</label><br>
+                    <label>{{$client->customerEmployed->employedPerson->name}}</label><br>
                 </div>
                 <div class="col-md-6">
-                 <label>{{$client->customerEmployed->employedPerson->lastname}}</label><br>
+                    <label>{{$client->customerEmployed->employedPerson->lastname}}</label><br>
                 </div>
                 <div class="col-md-6">
-                <label>{{$client->customerEmployed->employedPerson->dni}}</label><br>
+                    <label>{{$client->customerEmployed->employedPerson->dni}}</label><br>
                 </div>
                 <div class="col-md-6">
-                <label></label><br>
+                    <label>{{$client->customerEmployed->employedPerson->sex}}</label><br>
+                </div>
+                <div class="col-md-6">
+                    <img src="">
                 </div>
 
         	</div>
         </div>
+        
         <div class="modal-footer">
             <button type="button" class="btn btn-fill pull-left" data-dismiss="modal">Close</button>
         </div>
