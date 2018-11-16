@@ -12,7 +12,7 @@
         <div class="modal-body">
         	<div class="row">
         		<div class="col-md-6">
-                        <form action="/admin/motorcycle/{{$motorcycle->id}}" method="POST">
+                        <form action="/admin/motorcycles/{{$motorcycle->id}}" method="POST">
                             {{method_field('DELETE')}}
                             {{ csrf_field() }}
 
