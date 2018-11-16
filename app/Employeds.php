@@ -8,7 +8,7 @@ class Employeds extends Model
 {
     protected $fillable = [
 
-        'employedcode','totalsells','user_id','data_employed_id'
+        'employedcode','totalsells','data_employed_id'
 
     ];
 
@@ -19,8 +19,13 @@ class Employeds extends Model
         return $this->belongsTo('App\Persons','data_employed_id','id');
     }
 
-    public function customerEmployed()
-    {
-        return $this->hasMany('App\Employeds', 'seller_id', 'id');
-    }
+  public function employedUser()
+  {
+      return $this->belongsTo('App\User','employed_id','id');
+  }
+
+  public function customersEmployeds()
+  {
+      return $this->hasMany('App\Customers','seller_id','id');
+  }
 }

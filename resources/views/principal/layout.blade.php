@@ -83,7 +83,7 @@
                 <li class=" <?php if($page=='customers'){echo 'active';} ?> ">
                     <a href="/admin/customers">
                         <i class="pe-7s-user"></i>
-                        <p>Customes</p>
+                        <p>Customers</p>
                     </a>
                 </li>
                 <li class=" <?php if($page=='employeds'){echo 'active';} ?> ">
@@ -129,7 +129,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="pe-7s-bell">
                                     </i>
                                     <span class="badge">5</span>

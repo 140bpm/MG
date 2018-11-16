@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employeds;
+use App\Nationalities;
+use App\Persons;
+use App\Customers;
 
 class EmployedController extends Controller
 {
@@ -14,7 +17,8 @@ class EmployedController extends Controller
      */
     public function index(){
         $employeds = Employeds::all();
-        return view('admin.employeds.index')->with(["employeds"=>$employeds]);
+        $nations= Nationalities::all();
+        return view('admin.employeds.index')->with(["employeds"=>$employeds,"nations"=>$nations]);
     }
 
     /**
@@ -35,7 +39,28 @@ class EmployedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Persons::create([
+
+            'name'=>$request->name,
+            'lastname'=>$request->lastname,
+            'dni'=>$request->dni,
+            'birth'=>$request->birth,
+            'adress'=>$request->adress,
+            'sex'=>$request->sex,
+            'civil_state'=>$request->civilstate,
+            'nationality_id'=>$request->nationality
+
+        ]);
+
+        $employeds = Persons::all()->last();
+
+        Employeds::create([
+            'data_employed_id'=> $employeds->id,
+            'employedcode'=>'2',
+            'totalsells'=> 1
+        ]);
+
+        return redirect()->back();
     }
 
     /**

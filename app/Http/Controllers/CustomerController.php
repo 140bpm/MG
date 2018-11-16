@@ -15,11 +15,10 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $persons= Persons::all();
         $clients= Customers::all();
         $employeds= Employeds::all();
-        $nationalities= Nationalities::all();
-        return view('admin.customers.index')->with(["persons"=>$persons,"clients"=>$clients,"employeds"=>$employeds,"nationalities"=>$nationalities]);
+        $nations= Nationalities::all();
+        return view('admin.customers.index')->with(["clients"=>$clients,"employeds"=>$employeds,"nations"=>$nations]);
     }
 
     /**
@@ -52,22 +51,15 @@ class CustomerController extends Controller
             'nationality_id'=>$request->nationality
 
         ]);
-        $flag= 1;
-        $customer= Customers::all()->last();
 
-        Employeds::create([
-            'data_employed_id' => $flag
-        ]);
+        $customer = Persons::all()->last();
 
         Customers::create([
-            'data_customer_id' => $customer->id,
-            'seller_id' => $request->seller
+            'seller_id' => $request->seller,
+            'data_customer_id'=> $customer->id
+
+
         ]);
-
-        $persons= Persons::all();
-
-        $employeds= Employeds::all();
-        $nationalities= Nationalities::all();
 
         return redirect()->back();
 
@@ -106,6 +98,7 @@ class CustomerController extends Controller
     public function update(Request $request, $id)
     {
         $cond = $request->code;
+
         Persons::where('id',$cond)->update([
 
             'name'=>$request->name,

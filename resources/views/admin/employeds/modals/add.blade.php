@@ -15,7 +15,7 @@
         <div class="modal-body">
         	<div class="row">
         		<div class="col-md-6">
-                        <form action="{{ url('admin/customers') }}" method="POST">
+                        <form action="{{ url('admin/employeds') }}" method="POST">
                             {{ csrf_field() }}
                     <div class="input-group mb-3">
                         <label for="nombre">Name</label>
@@ -69,16 +69,6 @@
                         @foreach ($nations as $nation)
                         <option value="{{$nation->id}}">{{$nation->country}}</option>
                         @endforeach
-                    </select>
-                    </div><br>
-
-                    <div class="input-group mb-3">
-                        <label>Seller</label>
-                    <select type="text" class="form-control" placeholder="Code" aria-describedby="basic-addon1" name="seller" required>
-                        @foreach ($employeds as $employed)
-                             <option value="{{$employed->id}}">{{$employed->employedPerson->name}} {{$employed->employedPerson->lastname}}</option>
-                        @endforeach
-
                     </select>
                     </div><br>
 

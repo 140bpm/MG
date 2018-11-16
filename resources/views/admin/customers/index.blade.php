@@ -1,10 +1,10 @@
 @extends('principal.layout')
 
-<?php $page='Motorcycles' ?>
+<?php $page='Customers' ?>
 
-@section('title', 'Cars')
+@section('title', 'Customers')
 
-@section('namepage', 'Car')
+@section('namepage', 'Customers')
 
 @section('content-row1')
 
@@ -46,7 +46,7 @@
                             <td>{{$client->customerPerson->nationalityPerson->country}}</td>
 
                             <td>
-                                @include('/admin/customers/btns/seller',['client->id,persons,employeds,clients'])
+                                @include('/admin/customers/btns/seller',['client->id'])
                                 @include('/admin/customers/btns/look',['client->id'])
                                 @include('/admin/customers/btns/edit',['client->id'])
                                 @include('/admin/customers/btns/delete',['client->id'])

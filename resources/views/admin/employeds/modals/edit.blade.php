@@ -1,4 +1,4 @@
-<div class="modal fade" id="editModal{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade" id="editModal{{$employed->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -11,7 +11,7 @@
         <div class="modal-body">
         		<div class="row">
                         <div class="col-md-6">
-                                <form action="/admin/customers/{{$client->id}}" method="post">
+                                <form action="/admin/employeds/{{$employed->id}}" method="post">
                                     {{method_field('PATCH')}}
                                     {{ csrf_field() }}
 
@@ -73,18 +73,9 @@
                                 <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <label>Code</label>
-                                          <input type="text" class="form-control" value="{{$client->customerPerson->id}}" placeholder="Adress" aria-describedby="basic-addon1" min="0" name="code" required >
+                                          <input type="text" class="form-control" value="{{$employed->employedPerson->id}}" placeholder="Adress" aria-describedby="basic-addon1" min="0" name="code" required >
                                         </div><br>
 
-                                <div class="input-group mb-3">
-                                        <label>Edit Seller</label>
-                                  <select type="text" class="form-control" placeholder="Sex" aria-describedby="basic-addon1"  name="seller" required>
-                                       @foreach ($employeds as $employed)
-                                            <option value="{{$employed->id}}">{{$employed->employedPerson->name}} {{$employed->employedPerson->lastname}}</option>
-                                       @endforeach
-
-                                    </select>
-                                    </div><br>
 
                         </div>
                     </div>

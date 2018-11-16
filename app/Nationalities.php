@@ -12,7 +12,6 @@ class Nationalities extends Model
 
     ];
 
-
     public function nationalitiesPersons()
     {
         return $this->hasMany('App\Comment', 'nationality_id', 'id');

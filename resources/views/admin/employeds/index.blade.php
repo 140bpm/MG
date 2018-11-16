@@ -1,6 +1,6 @@
 @extends('principal.layout')
 
-<?php $page='employeds' ?>
+<?php $page='Employeds' ?>
 
 @section('title', 'Employeds')
 
@@ -11,6 +11,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="header">
+            <!-- including "Add New Modal" on the button "Add New" -->
             @include('/admin/includes/btns/add')
             <h4 class="title">Employeds</h4>
             <p class="category">Here is a subtitle for this table</p>
@@ -18,42 +19,55 @@
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
                 <thead>
-                    <th>ID</th>
+                    <th>Code</th>
                     <th>Name</th>
                     <th>Lastname</th>
-                    <th>D.N.I</th>
+                    <th>DNI</th>
                     <th>Birth</th>
                     <th>Adress</th>
-                    <th>Total Sells</th>
+                    <th>Sex</th>
+                    <th>Nationality</th>
                     <th>Options</th>
                 </thead>
                 <tbody>
-                    @foreach($employeds as $employed)
-                        @include('/admin/includes/modals/look')                    
+                    <!--  -->
+
+                        @foreach ($employeds as $employed)
                         <tr>
-                            <td>1</td>
-                            <td>Dakota Rice</td>
-                            <td>$36,738</td>
-                            <td>Niger</td>
-                            <td>Oud-Turnhout</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$employed->id}}</td>
+                            @include('/admin/employeds/modals/delete')
+                            <td>{{$employed->employedPerson->name}}</td>
+                            <td>{{$employed->employedPerson->lastname}}</td>
+                            <td>{{$employed->employedPerson->dni}}</td>
+                            <td>{{$employed->employedPerson->birth}}</td>
+                            <td>{{$employed->employedPerson->adress}}</td>
+                            <td>{{$employed->employedPerson->sex}}</td>
+                            <td>{{$employed->employedPerson->nationalityPerson->country}}</td>
+
                             <td>
-                                @include('/admin/includes/btns/look')
-                                @include('/admin/includes/btns/edit')
-                                <button><i class="pe-7s-trash"></i></button>
+                                @include('/admin/employeds/btns/look',['employed->id'])
+                                @include('/admin/employeds/btns/edit',['employed->id'])
+                                @include('/admin/employeds/btns/delete',['employed->id'])
                             </td>
+                            @include('/admin/employeds/modals/edit')
                         </tr>
-                    @endforeach
+                        @include('/admin/employeds/modals/look')
+                       @endforeach
+                    <!--  -->
                 </tbody>
             </table>
 
         </div>
+
     </div>
+
 </div>
 </div>
-@include('/admin/includes/modals/add')
+
+@include('/admin/employeds/modals/add')
+
 </div>
-@include('/admin/includes/modals/edit')
+
+
 
 @endsection
