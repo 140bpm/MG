@@ -24,7 +24,7 @@
                     <th>Name</th>
                     <th>Model</th>
                     <th>Type</th>
-                    <th>Year</th>
+                    <th>Added</th>
                     <th>Price</th>
                     <th>Description</th>
                     <th>Options</th>

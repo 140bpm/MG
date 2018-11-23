@@ -58,7 +58,6 @@ class CustomerController extends Controller
             'seller_id' => $request->seller,
             'data_customer_id'=> $customer->id
 
-
         ]);
 
         return redirect()->back();

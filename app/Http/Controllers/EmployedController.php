@@ -94,7 +94,18 @@ class EmployedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Persons::where('id',$request->code)->update([
+            'name'=>$request->name,
+            'lastname'=>$request->lastname,
+            'dni'=>$request->dni,
+            'birth'=>$request->birth,
+            'adress'=>$request->adress,
+            'sex'=>$request->sex,
+            'civil_state'=>$request->civilstate,
+            'nationality_id'=>$request->nationality
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -103,8 +114,11 @@ class EmployedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        Persons::where('id',$request->code)->delete();
+        return redirect()->back();
     }
+
+
 }

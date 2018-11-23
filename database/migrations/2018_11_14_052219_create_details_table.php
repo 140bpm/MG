@@ -19,6 +19,8 @@ class CreateDetailsTable extends Migration
             $table->foreign('bills_id')->references('id')->on('bills')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('quantity');
             $table->unsignedInteger('sell_price');
+            $table->unsignedInteger('plans_id');
+            $table->foreign('plans_id')->references('id')->on('plans')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
