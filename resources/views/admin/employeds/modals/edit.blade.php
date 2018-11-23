@@ -76,13 +76,36 @@
                                         </div><br>
 
 
-                        </div>
-                    </div>
-                </div>
+                        <br>
 
+                        <div class="input-group mb-3">
+                            <label>DNI</label>
+                            <input type="text" class="form-control" value="{{$employed->employedPerson->dni}}" aria-describedby="basic-addon1" name="dni" required>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group mb-3">
+                            <label>Birth</label>
+                            <input type="date" class="form-control" value="{{$employed->employedPerson->birth}}" aria-describedby="basic-addon1" min="0" name="birth" required>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group mb-3">
+                            <label>Code</label>
+                            <input type="text" class="form-control" value="{{$employed->employedPerson->id}}"aria-describedby="basic-addon1" min="0" name="code" readonly>
+                        </div>
+
+                        <br>
+
+                    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn pull-left btn-fill" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary btn-fill">Edit {{$employed->employedPerson->name}} {{$employed->employedPerson->lastname}}</button>
                 </div>
             </form>
+
             </div>
+
+        </div>

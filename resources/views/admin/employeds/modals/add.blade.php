@@ -1,7 +1,8 @@
 @if ($errors->any())
-        <div class="alert alert-danger"></div>
-        <h6>Corrige los siguientes errores por favor:</h6>
-        @endif
+    <div class="alert alert-danger"></div>
+    <h6>Corrige los siguientes errores por favor:</h6>
+@endif
+
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -10,7 +11,7 @@
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="addModalLabel">Add New Customer</h4>
+            <h4 class="modal-title" id="addModalLabel">Add New Employee</h4>
         </div>
         <div class="modal-body">
         	<div class="row">
@@ -78,7 +79,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn pull-left btn-fill" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-fill">Add</button>
+            <button type="submit" class="btn btn-primary btn-fill">Add Employee</button>
         </div>
     </form>
     </div>

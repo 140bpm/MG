@@ -14,7 +14,7 @@
             <!-- including "Add New Modal" on the button "Add New" -->
             @include('/admin/includes/btns/add')
             <h4 class="title">Customers</h4>
-            <p class="category">Here is a subtitle for this table</p>
+            <p class="category">Total customers</p>
         </div>
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -34,17 +34,18 @@
 
                         @foreach ($clients as $client)
                         <tr>
+                            <a href="/admin/customers/{{$client->data_customer_id}}">
                             <td>{{$client->data_customer_id}}</td>
                             @include('/admin/customers/modals/delete')
                             <td>{{$client->customerPerson->name}}</td>
-                            @include('/admin/customers/modals/seller')
                             <td>{{$client->customerPerson->lastname}}</td>
                             <td>{{$client->customerPerson->dni}}</td>
                             <td>{{$client->customerPerson->birth}}</td>
                             <td>{{$client->customerPerson->adress}}</td>
                             <td>{{$client->customerPerson->sex}}</td>
                             <td>{{$client->customerPerson->nationalityPerson->country}}</td>
-
+                            </a>
+                            @include('/admin/customers/modals/seller')
                             <td>
                                 @include('/admin/customers/btns/seller',['client->id'])
                                 @include('/admin/customers/btns/look',['client->id'])

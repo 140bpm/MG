@@ -2,9 +2,9 @@
 
 <?php $page='Employeds' ?>
 
-@section('title', 'Employeds')
+@section('title', 'Employees')
 
-@section('namepage', 'Employeds')
+@section('namepage', 'Employee')
 
 @section('content-row1')
 
@@ -13,7 +13,7 @@
         <div class="header">
             <!-- including "Add New Modal" on the button "Add New" -->
             @include('/admin/includes/btns/add')
-            <h4 class="title">Employeds</h4>
+            <h4 class="title">Employees</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
         <div class="content table-responsive table-full-width">
